@@ -1,0 +1,191 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="card shadow">
+        <div class="card-header banking-header">
+          <h3 class="card-title mb-0">
+            <i class="fas fa-history me-2"></i>
+            Transaction History
+          </h3>
+        </div>
+
+        <div class="card-body">
+          <!-- Filters -->
+          <form [formGroup]="filterForm" class="mb-4">
+            <div class="row g-3">
+              <div class="col-md-6 col-lg-3">
+                <label for="accountId" class="form-label">Filter by Account</label>
+                <select id="accountId" class="form-select" formControlName="accountId">
+                  <option value="">All Accounts</option>
+                  <option *ngFor="let account of accounts" [value]="account.id">
+                    {{ account.accountNumber }} - {{ account.accountType }}
+                  </option>
+                </select>
+              </div>
+
+              <div class="col-md-6 col-lg-3">
+                <label for="transactionType" class="form-label">Transaction Type</label>
+                <select id="transactionType" class="form-select" formControlName="transactionType">
+                  <option value="">All Types</option>
+                  <option value="Transfer">Transfer</option>
+                  <option value="Deposit">Deposit</option>
+                  <option value="Withdrawal">Withdrawal</option>
+                </select>
+              </div>
+
+              <div class="col-md-6 col-lg-3">
+                <label for="dateFrom" class="form-label">From Date</label>
+                <input type="date" id="dateFrom" class="form-control" formControlName="dateFrom">
+              </div>
+
+              <div class="col-md-6 col-lg-3">
+                <label for="dateTo" class="form-label">To Date</label>
+                <input type="date" id="dateTo" class="form-control" formControlName="dateTo">
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <app-custom-button text="Clear Filters" type="secondary" size="sm" (clicked)="clearFilters()">
+              </app-custom-button>
+
+              <app-custom-button text="Export CSV" type="primary" size="sm"
+                [disabled]="filteredTransactions.length === 0" (clicked)="exportTransactions()" class="ms-2">
+              </app-custom-button>
+            </div>
+          </form>
+
+          <!-- Selected Account Info -->
+          <div *ngIf="selectedAccount" class="alert alert-info">
+            <div class="row">
+              <div class="col-md-6">
+                <strong>{{ selectedAccount.accountHolderName }}</strong><br>
+                <small class="text-muted">{{ selectedAccount.accountNumber }} - {{ selectedAccount.accountType
+                  }}</small>
+              </div>
+              <div class="col-md-6 text-md-end">
+                <strong>Current Balance: {{ formatCurrency(selectedAccount.balance) }}</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Transaction Statistics -->
+          <div *ngIf="filteredTransactions.length > 0" class="row mb-4">
+            <div class="col-md-4">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title text-primary">{{ filteredTransactions.length }}</h5>
+                  <p class="card-text">Total Transactions</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4" *ngIf="selectedAccount">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title text-success">
+                    {{ formatCurrency(getTotalReceived()) }}
+                  </h5>
+                  <p class="card-text">Total Received</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4" *ngIf="selectedAccount">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title text-danger">
+                    {{ formatCurrency(getTotalSent()) }}
+                  </h5>
+                  <p class="card-text">Total Sent</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- No Transactions Message -->
+          <div *ngIf="filteredTransactions.length === 0" class="text-center py-5">
+            <i class="fas fa-receipt fa-3x text-muted mb-3"></i>
+            <h5 class="text-muted">No transactions found</h5>
+            <p class="text-muted">
+              <span *ngIf="transactions.length === 0">No transactions have been made yet.</span>
+              <span *ngIf="transactions.length > 0">Try adjusting your filters to see more results.</span>
+            </p>
+          </div>
+
+          <!-- Transactions List -->
+          <div *ngIf="filteredTransactions.length > 0" class="table-responsive">
+            <table class="table table-hover">
+              <thead class="table-light">
+                <tr>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th>From Account</th>
+                  <th>To Account</th>
+                  <th class="text-end">Amount</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let transaction of filteredTransactions" class="transaction-item">
+                  <td>
+                    <small class="text-muted">{{ formatDate(transaction.transactionDate) }}</small>
+                  </td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <i [class]="getTransactionIcon(transaction)"
+                        [class.text-success]="selectedAccount && isIncomingTransaction(transaction)"
+                        [class.text-danger]="selectedAccount && isOutgoingTransaction(transaction)"
+                        [class.text-primary]="!selectedAccount"></i>
+                      <span class="ms-2">{{ transaction.description }}</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div *ngIf="getAccountInfo(transaction.fromAccountId) as fromAccount">
+                      <strong>{{ fromAccount.accountNumber }}</strong><br>
+                      <small class="text-muted">{{ fromAccount.accountHolderName }}</small>
+                    </div>
+                  </td>
+                  <td>
+                    <div *ngIf="getAccountInfo(transaction.toAccountId) as toAccount">
+                      <strong>{{ toAccount.accountNumber }}</strong><br>
+                      <small class="text-muted">{{ toAccount.accountHolderName }}</small>
+                    </div>
+                  </td>
+                  <td class="text-end">
+                    <strong [class]="getTransactionTypeClass(transaction)">
+                      <span *ngIf="selectedAccount && isIncomingTransaction(transaction)">+</span>
+                      <span *ngIf="selectedAccount && isOutgoingTransaction(transaction)">-</span>
+                      {{ formatCurrency(transaction.amount) }}
+                    </strong>
+                  </td>
+                  <td>
+                    <span class="badge" [class.bg-primary]="transaction.type === 'Transfer'"
+                      [class.bg-success]="transaction.type === 'Deposit'"
+                      [class.bg-warning]="transaction.type === 'Withdrawal'">
+                      {{ transaction.type }}
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pagination would go here if needed for large datasets -->
+
+          <!-- Action Buttons -->
+          <div class="d-flex justify-content-between mt-4">
+            <app-custom-button text="Back to Dashboard" type="secondary" (clicked)="navigateBack()">
+            </app-custom-button>
+
+            <div>
+              <app-custom-button text="Transfer Funds" type="primary" [disabled]="accounts.length < 2"
+                (clicked)="navigateToTransfer()" class="me-2">
+              </app-custom-button>
+
+              <app-custom-button text="Create Account" type="success" (clicked)="navigateToCreateAccount()">
+              </app-custom-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

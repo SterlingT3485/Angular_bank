@@ -1,0 +1,36 @@
+/* Account type specific button styles */
+.btn-checking {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-checking:hover {
+  background: linear-gradient(135deg, #218838 0%, #17a2b8 100%);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-savings {
+  background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-savings:hover {
+  background: linear-gradient(135deg, #e0a800 0%, #dc6545 100%);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced disabled state */
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}

@@ -1,0 +1,211 @@
+<div class="container-fluid mt-4">
+  <!-- Header Section -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="banking-header rounded p-4 text-white">
+        <h1 class="mb-3">
+          <i class="fas fa-university me-3"></i>
+          Banking Dashboard
+        </h1>
+        <div class="row">
+          <div class="col-md-6">
+            <h4>Total Portfolio Balance</h4>
+            <h2 class="fw-bold">{{ formatCurrency(totalBalance) }}</h2>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p class="mb-1">Active Accounts: {{ accounts.length }}</p>
+            <p class="mb-0">Recent Transactions: {{ recentTransactions.length }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Actions -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card shadow">
+        <div class="card-header">
+          <h5 class="card-title mb-0">Quick Actions</h5>
+        </div>
+        <div class="card-body">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="d-grid">
+                <app-custom-button text="Create New Account" type="success" size="lg"
+                  (clicked)="navigateToCreateAccount()">
+                </app-custom-button>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="d-grid">
+                <app-custom-button text="Transfer Funds" type="primary" size="lg" [disabled]="accounts.length < 2"
+                  (clicked)="navigateToTransfer()">
+                </app-custom-button>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="d-grid">
+                <app-custom-button text="View History" type="secondary" size="lg" (clicked)="navigateToHistory()">
+                </app-custom-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Accounts Section -->
+    <div class="col-lg-8 mb-4">
+      <div class="card shadow">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h5 class="card-title mb-0">
+            <i class="fas fa-wallet me-2"></i>
+            Your Accounts
+          </h5>
+          <span class="badge bg-primary">{{ accounts.length }} Account{{ accounts.length !== 1 ? 's' : '' }}</span>
+        </div>
+        <div class="card-body">
+          <!-- No Accounts Message -->
+          <div *ngIf="accounts.length === 0" class="text-center py-5">
+            <i class="fas fa-plus-circle fa-3x text-muted mb-3"></i>
+            <h5 class="text-muted">No accounts yet</h5>
+            <p class="text-muted mb-3">Create your first account to get started with banking.</p>
+            <app-custom-button text="Create Your First Account" type="success" (clicked)="navigateToCreateAccount()">
+            </app-custom-button>
+          </div>
+
+          <!-- Accounts List -->
+          <div *ngIf="accounts.length > 0" class="row g-3">
+            <div *ngFor="let account of accounts" class="col-md-6">
+              <div class="card account-card h-100">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div>
+                      <h6 class="card-title mb-1">
+                        <i [class]="getAccountTypeIcon(account.accountType)"
+                          [class.text-success]="account.accountType === 'Checking'"
+                          [class.text-warning]="account.accountType === 'Savings'"></i>
+                        {{ account.accountType }} Account
+                      </h6>
+                      <p class="card-text text-muted mb-0">{{ account.accountNumber }}</p>
+                    </div>
+                    <span class="badge" [class.bg-success]="account.accountType === 'Checking'"
+                      [class.bg-warning]="account.accountType === 'Savings'">
+                      {{ account.accountType }}
+                    </span>
+                  </div>
+
+                  <div class="mb-3">
+                    <small class="text-muted">Account Holder</small>
+                    <p class="fw-semibold mb-0">{{ account.accountHolderName }}</p>
+                  </div>
+
+                  <div class="mb-3">
+                    <small class="text-muted">Current Balance</small>
+                    <h5 class="text-primary mb-0">{{ formatCurrency(account.balance) }}</h5>
+                  </div>
+
+                  <div class="text-muted">
+                    <small>Created: {{ account.createdDate | date:'shortDate' }}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Transactions Section -->
+    <div class="col-lg-4 mb-4">
+      <div class="card shadow">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h5 class="card-title mb-0">
+            <i class="fas fa-clock me-2"></i>
+            Recent Activity
+          </h5>
+          <app-custom-button text="View All" type="secondary" size="sm" (clicked)="navigateToHistory()">
+          </app-custom-button>
+        </div>
+        <div class="card-body">
+          <!-- No Transactions Message -->
+          <div *ngIf="recentTransactions.length === 0" class="text-center py-4">
+            <i class="fas fa-receipt fa-2x text-muted mb-3"></i>
+            <p class="text-muted mb-0">No transactions yet</p>
+            <small class="text-muted">Your recent activity will appear here</small>
+          </div>
+
+          <!-- Recent Transactions List -->
+          <div *ngIf="recentTransactions.length > 0" class="list-group list-group-flush">
+            <div *ngFor="let transaction of recentTransactions" class="list-group-item px-0 py-3 border-bottom">
+              <div class="d-flex align-items-center">
+                <div class="me-3">
+                  <i [class]="getTransactionIcon(transaction)" class="text-primary"></i>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between">
+                    <h6 class="mb-1">{{ transaction.description }}</h6>
+                    <strong class="text-primary">{{ formatCurrency(transaction.amount) }}</strong>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <small class="text-muted">
+                      {{ getAccountInfo(transaction.fromAccountId)?.accountNumber }} →
+                      {{ getAccountInfo(transaction.toAccountId)?.accountNumber }}
+                    </small>
+                    <small class="text-muted">{{ formatDate(transaction.transactionDate) }}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Overview -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card shadow">
+        <div class="card-header">
+          <h5 class="card-title mb-0">Banking Features</h5>
+        </div>
+        <div class="card-body">
+          <div class="row text-center">
+            <div class="col-md-3 mb-3">
+              <div class="p-3">
+                <i class="fas fa-shield-alt fa-2x text-success mb-2"></i>
+                <h6>Secure Transfers</h6>
+                <small class="text-muted">Protected fund transfers between your accounts</small>
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <div class="p-3">
+                <i class="fas fa-chart-line fa-2x text-primary mb-2"></i>
+                <h6>Transaction History</h6>
+                <small class="text-muted">Detailed records of all your banking activity</small>
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <div class="p-3">
+                <i class="fas fa-mobile-alt fa-2x text-info mb-2"></i>
+                <h6>Mobile Friendly</h6>
+                <small class="text-muted">Access your accounts from any device</small>
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <div class="p-3">
+                <i class="fas fa-clock fa-2x text-warning mb-2"></i>
+                <h6>Real-time Updates</h6>
+                <small class="text-muted">Instant balance and transaction updates</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

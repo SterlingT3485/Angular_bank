@@ -1,0 +1,1789 @@
+❯ Building...
+✔ Building...
+Application bundle generation failed. [1.276 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Unexpected token 'Date' at column 6 in [ new Date().getFullYear() ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/app.html@53:33[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:54:33:
+[37m      54 │ ...  Secure Banking Application [32m&copy;[37m {{ new Date().getFullYear() }}
+         ╵                                 [32m~~~~~~[0m
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.ts:8:15:
+[37m      8 │   templateUrl: [32m'./app.html'[37m,
+        ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'new' does not exist on type 'AppComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:54:43:
+[37m      54 │ ...  Secure Banking Application &copy; {{ [32mnew[37m Date().getFullYear() }}
+         ╵                                           [32m~~~[0m
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.ts:8:15:
+[37m      8 │   templateUrl: [32m'./app.html'[37m,
+        ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Bindings cannot contain assignments at column 48 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing closing parentheses at column 87 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing expected ) at column 92 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Unexpected token ')' at column 112 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type 'Transaction[]' is not assignable to parameter of type 'number'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:59:
+[37m      85 │ ...urrency(filteredTransactions.[32mfilter[37m(t => isIncomingTransaction(...
+         ╵                                 [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => value is Transaction, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => value is Transaction'.
+  Overload 2 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => unknown, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:66:
+[37m      85 │ ...ansactions.filter([32mt => isIncomingTransaction(t[37m)).reduce((sum, t...
+         ╵                      [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'reduce' does not exist on type 'string'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:97:
+[37m      85 │ ...tions.filter(t => isIncomingTransaction(t)).[32mreduce[37m((sum, t) => sum
+         ╵                                                [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'sum' does not exist on type 'HistoryComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:105:
+[37m      85 │ ...tions.filter(t => isIncomingTransaction(t)).reduce(([32msum[37m, t) => sum
+         ╵                                                        [32m~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Bindings cannot contain assignments at column 48 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing closing parentheses at column 87 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing expected ) at column 92 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Unexpected token ')' at column 112 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type 'Transaction[]' is not assignable to parameter of type 'number'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:59:
+[37m      96 │ ...urrency(filteredTransactions.[32mfilter[37m(t => isOutgoingTransaction(...
+         ╵                                 [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => value is Transaction, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => value is Transaction'.
+  Overload 2 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => unknown, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:66:
+[37m      96 │ ...ansactions.filter([32mt => isOutgoingTransaction(t[37m)).reduce((sum, t...
+         ╵                      [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'reduce' does not exist on type 'string'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:97:
+[37m      96 │ ...tions.filter(t => isOutgoingTransaction(t)).[32mreduce[37m((sum, t) => sum
+         ╵                                                [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'sum' does not exist on type 'HistoryComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:105:
+[37m      96 │ ...tions.filter(t => isOutgoingTransaction(t)).reduce(([32msum[37m, t) => sum
+         ╵                                                        [32m~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2341: Property 'router' is private and only accessible within class 'HistoryComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:182:27:
+[37m      182 │                 (clicked)="[32mrouter[37m.navigate(['/transfer'])" class=...
+          ╵                            [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2341: Property 'router' is private and only accessible within class 'HistoryComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:185:81:
+[37m      185 │ ..." type="success" (clicked)="[32mrouter[37m.navigate(['/create-account'...
+          ╵                                [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2305: Module '"./app/app"' has no exported member 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/main.server.ts:2:9:
+[37m      2 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2305: Module '"./app/app"' has no exported member 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/main.ts:3:9:
+[37m      3 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNo matching export in "src/app/app.ts" for import "App"[0m
+
+    src/main.server.ts:2:9:
+[37m      2 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "~bootstrap/dist/css/bootstrap.min.css"[0m
+
+    src/styles.css:2:8:
+[37m      2 │ @import [32m'~bootstrap/dist/css/bootstrap.min.css'[37m;
+        ╵         [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "~bootstrap/dist/css/bootstrap.min.css" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+
+Watch mode enabled. Watching for file changes...
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.286 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "~bootstrap/dist/css/bootstrap.min.css"[0m
+
+    src/styles.css:2:8:
+[37m      2 │ @import [32m'~bootstrap/dist/css/bootstrap.min.css'[37m;
+        ╵         [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "~bootstrap/dist/css/bootstrap.min.css" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'currentYear' does not exist on type 'AppComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:54:43:
+[37m      54 │       Secure Banking Application &copy; {{ [32mcurrentYear[37m }}
+         ╵                                            [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.ts:8:15:
+[37m      8 │   templateUrl: [32m'./app.html'[37m,
+        ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Bindings cannot contain assignments at column 48 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing closing parentheses at column 87 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing expected ) at column 92 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Unexpected token ')' at column 112 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type 'Transaction[]' is not assignable to parameter of type 'number'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:59:
+[37m      85 │ ...urrency(filteredTransactions.[32mfilter[37m(t => isIncomingTransaction(...
+         ╵                                 [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => value is Transaction, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => value is Transaction'.
+  Overload 2 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => unknown, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:66:
+[37m      85 │ ...ansactions.filter([32mt => isIncomingTransaction(t[37m)).reduce((sum, t...
+         ╵                      [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'reduce' does not exist on type 'string'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:97:
+[37m      85 │ ...tions.filter(t => isIncomingTransaction(t)).[32mreduce[37m((sum, t) => sum
+         ╵                                                [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'sum' does not exist on type 'HistoryComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:105:
+[37m      85 │ ...tions.filter(t => isIncomingTransaction(t)).reduce(([32msum[37m, t) => sum
+         ╵                                                        [32m~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Bindings cannot contain assignments at column 48 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing closing parentheses at column 87 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing expected ) at column 92 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Unexpected token ')' at column 112 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type 'Transaction[]' is not assignable to parameter of type 'number'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:59:
+[37m      96 │ ...urrency(filteredTransactions.[32mfilter[37m(t => isOutgoingTransaction(...
+         ╵                                 [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => value is Transaction, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => value is Transaction'.
+  Overload 2 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => unknown, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:66:
+[37m      96 │ ...ansactions.filter([32mt => isOutgoingTransaction(t[37m)).reduce((sum, t...
+         ╵                      [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'reduce' does not exist on type 'string'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:97:
+[37m      96 │ ...tions.filter(t => isOutgoingTransaction(t)).[32mreduce[37m((sum, t) => sum
+         ╵                                                [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'sum' does not exist on type 'HistoryComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:105:
+[37m      96 │ ...tions.filter(t => isOutgoingTransaction(t)).reduce(([32msum[37m, t) => sum
+         ╵                                                        [32m~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2341: Property 'router' is private and only accessible within class 'HistoryComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:182:27:
+[37m      182 │                 (clicked)="[32mrouter[37m.navigate(['/transfer'])" class=...
+          ╵                            [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2341: Property 'router' is private and only accessible within class 'HistoryComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:185:81:
+[37m      185 │ ..." type="success" (clicked)="[32mrouter[37m.navigate(['/create-account'...
+          ╵                                [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2305: Module '"./app/app"' has no exported member 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/main.server.ts:2:9:
+[37m      2 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2305: Module '"./app/app"' has no exported member 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/main.ts:3:9:
+[37m      3 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNo matching export in "src/app/app.ts" for import "App"[0m
+
+    src/main.server.ts:2:9:
+[37m      2 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.086 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "~bootstrap/dist/css/bootstrap.min.css"[0m
+
+    src/styles.css:2:8:
+[37m      2 │ @import [32m'~bootstrap/dist/css/bootstrap.min.css'[37m;
+        ╵         [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "~bootstrap/dist/css/bootstrap.min.css" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'currentYear' does not exist on type 'AppComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:54:43:
+[37m      54 │       Secure Banking Application &copy; {{ [32mcurrentYear[37m }}
+         ╵                                            [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.ts:8:15:
+[37m      8 │   templateUrl: [32m'./app.html'[37m,
+        ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Bindings cannot contain assignments at column 48 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing closing parentheses at column 87 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing expected ) at column 92 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Unexpected token ')' at column 112 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type 'Transaction[]' is not assignable to parameter of type 'number'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:59:
+[37m      85 │ ...urrency(filteredTransactions.[32mfilter[37m(t => isIncomingTransaction(...
+         ╵                                 [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => value is Transaction, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => value is Transaction'.
+  Overload 2 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => unknown, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:66:
+[37m      85 │ ...ansactions.filter([32mt => isIncomingTransaction(t[37m)).reduce((sum, t...
+         ╵                      [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'reduce' does not exist on type 'string'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:97:
+[37m      85 │ ...tions.filter(t => isIncomingTransaction(t)).[32mreduce[37m((sum, t) => sum
+         ╵                                                [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'sum' does not exist on type 'HistoryComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:105:
+[37m      85 │ ...tions.filter(t => isIncomingTransaction(t)).reduce(([32msum[37m, t) => sum
+         ╵                                                        [32m~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Bindings cannot contain assignments at column 48 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing closing parentheses at column 87 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing expected ) at column 92 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Unexpected token ')' at column 112 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type 'Transaction[]' is not assignable to parameter of type 'number'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:59:
+[37m      96 │ ...urrency(filteredTransactions.[32mfilter[37m(t => isOutgoingTransaction(...
+         ╵                                 [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => value is Transaction, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => value is Transaction'.
+  Overload 2 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => unknown, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:66:
+[37m      96 │ ...ansactions.filter([32mt => isOutgoingTransaction(t[37m)).reduce((sum, t...
+         ╵                      [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'reduce' does not exist on type 'string'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:97:
+[37m      96 │ ...tions.filter(t => isOutgoingTransaction(t)).[32mreduce[37m((sum, t) => sum
+         ╵                                                [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'sum' does not exist on type 'HistoryComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:105:
+[37m      96 │ ...tions.filter(t => isOutgoingTransaction(t)).reduce(([32msum[37m, t) => sum
+         ╵                                                        [32m~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2341: Property 'router' is private and only accessible within class 'HistoryComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:182:27:
+[37m      182 │                 (clicked)="[32mrouter[37m.navigate(['/transfer'])" class=...
+          ╵                            [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2341: Property 'router' is private and only accessible within class 'HistoryComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:185:81:
+[37m      185 │ ..." type="success" (clicked)="[32mrouter[37m.navigate(['/create-account'...
+          ╵                                [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2305: Module '"./app/app"' has no exported member 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/main.server.ts:2:9:
+[37m      2 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2305: Module '"./app/app"' has no exported member 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/main.ts:3:9:
+[37m      3 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNo matching export in "src/app/app.ts" for import "App"[0m
+
+    src/main.server.ts:2:9:
+[37m      2 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.079 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "~bootstrap/dist/css/bootstrap.min.css"[0m
+
+    src/styles.css:2:8:
+[37m      2 │ @import [32m'~bootstrap/dist/css/bootstrap.min.css'[37m;
+        ╵         [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "~bootstrap/dist/css/bootstrap.min.css" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Bindings cannot contain assignments at column 48 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing closing parentheses at column 87 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing expected ) at column 92 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Unexpected token ')' at column 112 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type 'Transaction[]' is not assignable to parameter of type 'number'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:59:
+[37m      85 │ ...urrency(filteredTransactions.[32mfilter[37m(t => isIncomingTransaction(...
+         ╵                                 [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => value is Transaction, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => value is Transaction'.
+  Overload 2 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => unknown, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:66:
+[37m      85 │ ...ansactions.filter([32mt => isIncomingTransaction(t[37m)).reduce((sum, t...
+         ╵                      [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'reduce' does not exist on type 'string'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:97:
+[37m      85 │ ...tions.filter(t => isIncomingTransaction(t)).[32mreduce[37m((sum, t) => sum
+         ╵                                                [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'sum' does not exist on type 'HistoryComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:105:
+[37m      85 │ ...tions.filter(t => isIncomingTransaction(t)).reduce(([32msum[37m, t) => sum
+         ╵                                                        [32m~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Bindings cannot contain assignments at column 48 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing closing parentheses at column 87 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing expected ) at column 92 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Unexpected token ')' at column 112 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type 'Transaction[]' is not assignable to parameter of type 'number'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:59:
+[37m      96 │ ...urrency(filteredTransactions.[32mfilter[37m(t => isOutgoingTransaction(...
+         ╵                                 [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => value is Transaction, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => value is Transaction'.
+  Overload 2 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => unknown, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:66:
+[37m      96 │ ...ansactions.filter([32mt => isOutgoingTransaction(t[37m)).reduce((sum, t...
+         ╵                      [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'reduce' does not exist on type 'string'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:97:
+[37m      96 │ ...tions.filter(t => isOutgoingTransaction(t)).[32mreduce[37m((sum, t) => sum
+         ╵                                                [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'sum' does not exist on type 'HistoryComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:105:
+[37m      96 │ ...tions.filter(t => isOutgoingTransaction(t)).reduce(([32msum[37m, t) => sum
+         ╵                                                        [32m~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2341: Property 'router' is private and only accessible within class 'HistoryComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:182:27:
+[37m      182 │                 (clicked)="[32mrouter[37m.navigate(['/transfer'])" class=...
+          ╵                            [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2341: Property 'router' is private and only accessible within class 'HistoryComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:185:81:
+[37m      185 │ ..." type="success" (clicked)="[32mrouter[37m.navigate(['/create-account'...
+          ╵                                [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2305: Module '"./app/app"' has no exported member 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/main.server.ts:2:9:
+[37m      2 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2305: Module '"./app/app"' has no exported member 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/main.ts:3:9:
+[37m      3 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNo matching export in "src/app/app.ts" for import "App"[0m
+
+    src/main.server.ts:2:9:
+[37m      2 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.131 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "~bootstrap/dist/css/bootstrap.min.css"[0m
+
+    src/styles.css:2:8:
+[37m      2 │ @import [32m'~bootstrap/dist/css/bootstrap.min.css'[37m;
+        ╵         [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "~bootstrap/dist/css/bootstrap.min.css" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Bindings cannot contain assignments at column 48 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing closing parentheses at column 87 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing expected ) at column 92 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Unexpected token ')' at column 112 in [ formatCurrency(filteredTransactions.filter(t => isIncomingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@84:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:20:
+[37m      85 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type 'Transaction[]' is not assignable to parameter of type 'number'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:59:
+[37m      85 │ ...urrency(filteredTransactions.[32mfilter[37m(t => isIncomingTransaction(...
+         ╵                                 [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => value is Transaction, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => value is Transaction'.
+  Overload 2 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => unknown, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:66:
+[37m      85 │ ...ansactions.filter([32mt => isIncomingTransaction(t[37m)).reduce((sum, t...
+         ╵                      [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'reduce' does not exist on type 'string'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:97:
+[37m      85 │ ...tions.filter(t => isIncomingTransaction(t)).[32mreduce[37m((sum, t) => sum
+         ╵                                                [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'sum' does not exist on type 'HistoryComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:85:105:
+[37m      85 │ ...tions.filter(t => isIncomingTransaction(t)).reduce(([32msum[37m, t) => sum
+         ╵                                                        [32m~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Bindings cannot contain assignments at column 48 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing closing parentheses at column 87 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Missing expected ) at column 92 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Parser Error: Unexpected token ')' at column 112 in [ formatCurrency(filteredTransactions.filter(t => isOutgoingTransaction(t)).reduce((sum, t) => sum + t.amount, 0)) ] in /Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/pages/history/history.html@95:20[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:20:
+[37m      96 │ ...          [32m{{ formatCurrency(filteredTransactions.filter(t => is[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type 'Transaction[]' is not assignable to parameter of type 'number'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:59:
+[37m      96 │ ...urrency(filteredTransactions.[32mfilter[37m(t => isOutgoingTransaction(...
+         ╵                                 [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2769: No overload matches this call.
+  Overload 1 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => value is Transaction, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => value is Transaction'.
+  Overload 2 of 2, '(predicate: (value: Transaction, index: number, array: Transaction[]) => unknown, thisArg?: any): Transaction[]', gave the following error.
+    Argument of type 'undefined' is not assignable to parameter of type '(value: Transaction, index: number, array: Transaction[]) => unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:66:
+[37m      96 │ ...ansactions.filter([32mt => isOutgoingTransaction(t[37m)).reduce((sum, t...
+         ╵                      [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'reduce' does not exist on type 'string'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:97:
+[37m      96 │ ...tions.filter(t => isOutgoingTransaction(t)).[32mreduce[37m((sum, t) => sum
+         ╵                                                [32m~~~~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'sum' does not exist on type 'HistoryComponent'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/history/history.html:96:105:
+[37m      96 │ ...tions.filter(t => isOutgoingTransaction(t)).reduce(([32msum[37m, t) => sum
+         ╵                                                        [32m~~~[0m
+
+  Error occurs in the template of component HistoryComponent.
+
+    src/app/pages/history/history.ts:14:15:
+[37m      14 │   templateUrl: [32m'./history.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2305: Module '"./app/app"' has no exported member 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/main.server.ts:2:9:
+[37m      2 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2305: Module '"./app/app"' has no exported member 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/main.ts:3:9:
+[37m      3 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNo matching export in "src/app/app.ts" for import "App"[0m
+
+    src/main.server.ts:2:9:
+[37m      2 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.053 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "~bootstrap/dist/css/bootstrap.min.css"[0m
+
+    src/styles.css:2:8:
+[37m      2 │ @import [32m'~bootstrap/dist/css/bootstrap.min.css'[37m;
+        ╵         [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "~bootstrap/dist/css/bootstrap.min.css" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2305: Module '"./app/app"' has no exported member 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/main.server.ts:2:9:
+[37m      2 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2305: Module '"./app/app"' has no exported member 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/main.ts:3:9:
+[37m      3 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNo matching export in "src/app/app.ts" for import "App"[0m
+
+    src/main.server.ts:2:9:
+[37m      2 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.138 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "~bootstrap/dist/css/bootstrap.min.css"[0m
+
+    src/styles.css:2:8:
+[37m      2 │ @import [32m'~bootstrap/dist/css/bootstrap.min.css'[37m;
+        ╵         [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "~bootstrap/dist/css/bootstrap.min.css" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2305: Module '"./app/app"' has no exported member 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/main.server.ts:2:9:
+[37m      2 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2305: Module '"./app/app"' has no exported member 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/main.ts:3:9:
+[37m      3 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNo matching export in "src/app/app.ts" for import "App"[0m
+
+    src/main.server.ts:2:9:
+[37m      2 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.104 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "~bootstrap/dist/css/bootstrap.min.css"[0m
+
+    src/styles.css:2:8:
+[37m      2 │ @import [32m'~bootstrap/dist/css/bootstrap.min.css'[37m;
+        ╵         [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "~bootstrap/dist/css/bootstrap.min.css" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2305: Module '"./app/app"' has no exported member 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/main.server.ts:2:9:
+[37m      2 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNo matching export in "src/app/app.ts" for import "App"[0m
+
+    src/main.server.ts:2:9:
+[37m      2 │ import { [32mApp[37m } from './app/app';
+        ╵          [32m~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.057 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "~bootstrap/dist/css/bootstrap.min.css"[0m
+
+    src/styles.css:2:8:
+[37m      2 │ @import [32m'~bootstrap/dist/css/bootstrap.min.css'[37m;
+        ╵         [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "~bootstrap/dist/css/bootstrap.min.css" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+styles.css           | styles           | 277.75 kB | 
+main.js              | main             |   8.28 kB | 
+chunk-SG2LYVAH.js    | -                | 894 bytes | 
+
+                     | Initial total    | 286.92 kB
+
+Lazy chunk files     | Names            |  Raw size
+chunk-LYJLVLHJ.js    | transfer         |  34.01 kB | 
+chunk-6ZB527LB.js    | history          |  33.69 kB | 
+chunk-PVU6WETT.js    | dashboard        |  27.74 kB | 
+chunk-JSAXBHAB.js    | create-account   |  20.73 kB | 
+chunk-IJKB6VQS.js    | -                |  10.69 kB | 
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+main.server.mjs      | main.server      |   9.53 kB | 
+server.mjs           | server           |   1.79 kB | 
+chunk-VI6KR4OF.mjs   | -                | 928 bytes | 
+polyfills.server.mjs | polyfills.server | 243 bytes | 
+
+Lazy chunk files     | Names            |  Raw size
+chunk-3P2RNDPQ.mjs   | transfer         |  34.05 kB | 
+chunk-4HMYE4B2.mjs   | history          |  33.73 kB | 
+chunk-HESFZHOD.mjs   | dashboard        |  27.77 kB | 
+chunk-5CASYPOF.mjs   | create-account   |  20.77 kB | 
+chunk-5ZICSK73.mjs   | -                |  10.72 kB | 
+
+Application bundle generation complete. [0.065 seconds]
+
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+6:57:44 PM [vite] (client) Re-optimizing dependencies because lockfile has changed
+6:57:44 PM [vite] (ssr) Re-optimizing dependencies because lockfile has changed
+  ➜  Local:   http://localhost:4200/
+  ➜  press h + enter to show help
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+styles.css           | styles           | 277.75 kB | 
+main.js              | main             |   8.28 kB | 
+chunk-SG2LYVAH.js    | -                | 894 bytes | 
+
+                     | Initial total    | 286.92 kB
+
+Lazy chunk files     | Names            |  Raw size
+chunk-LYJLVLHJ.js    | transfer         |  34.01 kB | 
+chunk-6ZB527LB.js    | history          |  33.69 kB | 
+chunk-PVU6WETT.js    | dashboard        |  27.74 kB | 
+chunk-JSAXBHAB.js    | create-account   |  20.73 kB | 
+chunk-IJKB6VQS.js    | -                |  10.69 kB | 
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+main.server.mjs      | main.server      |   9.53 kB | 
+server.mjs           | server           |   1.79 kB | 
+chunk-VI6KR4OF.mjs   | -                | 928 bytes | 
+polyfills.server.mjs | polyfills.server | 243 bytes | 
+
+Lazy chunk files     | Names            |  Raw size
+chunk-3P2RNDPQ.mjs   | transfer         |  34.05 kB | 
+chunk-4HMYE4B2.mjs   | history          |  33.73 kB | 
+chunk-HESFZHOD.mjs   | dashboard        |  27.77 kB | 
+chunk-5CASYPOF.mjs   | create-account   |  20.77 kB | 
+chunk-5ZICSK73.mjs   | -                |  10.72 kB | 
+
+Application bundle generation complete. [0.024 seconds]
+
+ERROR ReferenceError: localStorage is not defined
+    at _BankingService.loadData (/Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/services/banking.ts:114:26)
+    at new _BankingService (/Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/services/banking.ts:18:10)
+    at Object.BankingService_Factory (/Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/app/services/banking.ts:126:3)
+    at eval (/Users/jiashuoshi/Desktop/code/angular_bank/banking-app/.angular/cache/20.2.0/banking-app/vite/deps_ssr/chunk-S75JXF7X.js:2380:35)
+    at runInInjectorProfilerContext (/Users/jiashuoshi/Desktop/code/angular_bank/banking-app/.angular/cache/20.2.0/banking-app/vite/deps_ssr/chunk-S75JXF7X.js:1532:5)
+    at R3Injector.hydrate (/Users/jiashuoshi/Desktop/code/angular_bank/banking-app/.angular/cache/20.2.0/banking-app/vite/deps_ssr/chunk-S75JXF7X.js:2378:11)
+    at R3Injector.get (/Users/jiashuoshi/Desktop/code/angular_bank/banking-app/.angular/cache/20.2.0/banking-app/vite/deps_ssr/chunk-S75JXF7X.js:2272:23)
+    at R3Injector.get (/Users/jiashuoshi/Desktop/code/angular_bank/banking-app/.angular/cache/20.2.0/banking-app/vite/deps_ssr/chunk-S75JXF7X.js:2277:27)
+    at ChainedInjector.get (/Users/jiashuoshi/Desktop/code/angular_bank/banking-app/.angular/cache/20.2.0/banking-app/vite/deps_ssr/chunk-S75JXF7X.js:10935:32)
+    at lookupTokenUsingModuleInjector (/Users/jiashuoshi/Desktop/code/angular_bank/banking-app/.angular/cache/20.2.0/banking-app/vite/deps_ssr/chunk-S75JXF7X.js:4547:31)
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names          | Raw size
+main.js             | main           |  8.28 kB | 
+
+Lazy chunk files    | Names          | Raw size
+chunk-6KG2LY2X.js   | transfer       | 34.01 kB | 
+chunk-IC2B5ZIR.js   | history        | 33.69 kB | 
+chunk-6ZR5AXK2.js   | dashboard      | 27.74 kB | 
+chunk-4LHFR2PZ.js   | create-account | 20.73 kB | 
+chunk-4CZJ6KJR.js   | -              | 11.06 kB | 
+
+
+Server bundles     
+Initial chunk files | Names          | Raw size
+main.server.mjs     | main.server    |  9.53 kB | 
+
+Lazy chunk files    | Names          | Raw size
+chunk-TNX42J3Z.mjs  | transfer       | 34.05 kB | 
+chunk-YVZMLDEW.mjs  | history        | 33.73 kB | 
+chunk-D4MKSX2T.mjs  | dashboard      | 27.77 kB | 
+chunk-ZVHIYHHY.mjs  | create-account | 20.77 kB | 
+chunk-53H5OG5S.mjs  | -              | 11.10 kB | 
+
+Application bundle generation complete. [0.104 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+styles.css           | styles           | 277.75 kB | 
+main.js              | main             |   8.28 kB | 
+chunk-SG2LYVAH.js    | -                | 894 bytes | 
+
+                     | Initial total    | 286.92 kB
+
+Lazy chunk files     | Names            |  Raw size
+chunk-6KG2LY2X.js    | transfer         |  34.01 kB | 
+chunk-IC2B5ZIR.js    | history          |  33.69 kB | 
+chunk-6ZR5AXK2.js    | dashboard        |  27.74 kB | 
+chunk-4LHFR2PZ.js    | create-account   |  20.73 kB | 
+chunk-4CZJ6KJR.js    | -                |  11.06 kB | 
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+main.server.mjs      | main.server      |   9.53 kB | 
+server.mjs           | server           |   1.79 kB | 
+chunk-VI6KR4OF.mjs   | -                | 928 bytes | 
+polyfills.server.mjs | polyfills.server | 243 bytes | 
+
+Lazy chunk files     | Names            |  Raw size
+chunk-TNX42J3Z.mjs   | transfer         |  34.05 kB | 
+chunk-YVZMLDEW.mjs   | history          |  33.73 kB | 
+chunk-D4MKSX2T.mjs   | dashboard        |  27.77 kB | 
+chunk-ZVHIYHHY.mjs   | create-account   |  20.77 kB | 
+chunk-53H5OG5S.mjs   | -                |  11.10 kB | 
+
+Application bundle generation complete. [0.056 seconds]
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        |  8.53 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server |  9.78 kB | 
+
+Application bundle generation complete. [0.129 seconds]
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mNG8113: NgbCollapse is not used within the template of AppComponent[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.ts:8:56:
+[37m      8 │   imports: [RouterOutlet, RouterLink, RouterLinkActive, [32mNgbCollapse[37m],
+        ╵                                                         [32m~~~~~~~~~~~[0m
+
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        |  9.78 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 11.03 kB | 
+
+Application bundle generation complete. [0.077 seconds]
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+styles.css           | styles           | 277.75 kB | 
+main.js              | main             |   9.78 kB | 
+chunk-SG2LYVAH.js    | -                | 894 bytes | 
+
+                     | Initial total    | 288.42 kB
+
+Lazy chunk files     | Names            |  Raw size
+chunk-6KG2LY2X.js    | transfer         |  34.01 kB | 
+chunk-IC2B5ZIR.js    | history          |  33.69 kB | 
+chunk-6ZR5AXK2.js    | dashboard        |  27.74 kB | 
+chunk-4LHFR2PZ.js    | create-account   |  20.73 kB | 
+chunk-4CZJ6KJR.js    | -                |  11.06 kB | 
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+main.server.mjs      | main.server      |  11.03 kB | 
+server.mjs           | server           |   1.79 kB | 
+chunk-VI6KR4OF.mjs   | -                | 928 bytes | 
+polyfills.server.mjs | polyfills.server | 243 bytes | 
+
+Lazy chunk files     | Names            |  Raw size
+chunk-TNX42J3Z.mjs   | transfer         |  34.05 kB | 
+chunk-YVZMLDEW.mjs   | history          |  33.73 kB | 
+chunk-D4MKSX2T.mjs   | dashboard        |  27.77 kB | 
+chunk-ZVHIYHHY.mjs   | create-account   |  20.77 kB | 
+chunk-53H5OG5S.mjs   | -                |  11.10 kB | 
+
+Application bundle generation complete. [0.085 seconds]
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        | 11.07 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 12.32 kB | 
+
+Application bundle generation complete. [0.114 seconds]
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       | Raw size
+main.js             | main        |  9.78 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       | Raw size
+main.server.mjs     | main.server | 11.03 kB | 
+
+Application bundle generation complete. [0.075 seconds]
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.034 seconds]
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "src/styles.css"[0m
+
+    angular:styles/global:styles:1:8:
+[37m      1 │ @import [32m'src/styles.css'[37m;
+        ╵         [32m~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "src/styles.css" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "/Users/jiashuoshi/Desktop/code/angular_bank/banking-app/src/main.ts"[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./src/main.server"[0m
+
+    angular:main-server:angular:main-server:8:24:
+[37m      8 │ export { default } from [32m'./src/main.server'[37m;
+        ╵                         [32m~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./src/server"[0m
+
+    angular:ssr-entry:angular:ssr-entry:2:24:
+[37m      2 │ import * as server from [32m'./src/server'[37m;
+        ╵                         [32m~~~~~~~~~~~~~~[0m
+
+

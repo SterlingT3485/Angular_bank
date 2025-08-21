@@ -1,0 +1,9 @@
+{
+  "routes": {
+    "/": {},
+    "/create-account": {},
+    "/dashboard": {},
+    "/history": {},
+    "/transfer": {}
+  }
+}

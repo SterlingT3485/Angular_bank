@@ -1,0 +1,191 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-10 col-lg-8">
+      <div class="card shadow">
+        <div class="card-header banking-header">
+          <h3 class="card-title mb-0">
+            <i class="fas fa-exchange-alt me-2"></i>
+            Transfer Funds
+          </h3>
+        </div>
+
+        <div class="card-body">
+          <div *ngIf="accounts.length < 2" class="alert alert-warning">
+            <i class="fas fa-exclamation-triangle me-2"></i>
+            You need at least 2 accounts to make a transfer.
+            <a routerLink="/create-account" class="alert-link">Create a new account</a>
+          </div>
+
+          <form *ngIf="accounts.length >= 2" [formGroup]="transferForm" (ngSubmit)="onSubmit()">
+
+            <!-- From Account -->
+            <div class="mb-3">
+              <label for="fromAccountId" class="form-label">
+                From Account <span class="text-danger">*</span>
+              </label>
+              <select id="fromAccountId" class="form-select" formControlName="fromAccountId"
+                [class.is-invalid]="formControls['fromAccountId'].invalid && formControls['fromAccountId'].touched">
+                <option value="">Select source account</option>
+                <option *ngFor="let account of accounts" [value]="account.id">
+                  {{ account.accountNumber }} - {{ account.accountType }}
+                  ({{ formatCurrency(account.balance) }})
+                </option>
+              </select>
+
+              <div *ngIf="formControls['fromAccountId'].invalid && formControls['fromAccountId'].touched"
+                class="invalid-feedback">
+                Please select a source account
+              </div>
+
+              <!-- From Account Details -->
+              <div *ngIf="fromAccount" class="mt-2">
+                <div class="card account-card">
+                  <div class="card-body py-2">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <small class="text-muted">Account Holder:</small><br>
+                        <strong>{{ fromAccount.accountHolderName }}</strong>
+                      </div>
+                      <div class="col-md-6">
+                        <small class="text-muted">Available Balance:</small><br>
+                        <strong class="text-success">{{ formatCurrency(fromAccount.balance) }}</strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- To Account -->
+            <div class="mb-3">
+              <label for="toAccountId" class="form-label">
+                To Account <span class="text-danger">*</span>
+              </label>
+              <select id="toAccountId" class="form-select" formControlName="toAccountId"
+                [class.is-invalid]="formControls['toAccountId'].invalid && formControls['toAccountId'].touched">
+                <option value="">Select destination account</option>
+                <option *ngFor="let account of availableToAccounts" [value]="account.id">
+                  {{ account.accountNumber }} - {{ account.accountType }}
+                  ({{ account.accountHolderName }})
+                </option>
+              </select>
+
+              <div *ngIf="formControls['toAccountId'].invalid && formControls['toAccountId'].touched"
+                class="invalid-feedback">
+                Please select a destination account
+              </div>
+
+              <!-- Same Account Error -->
+              <div *ngIf="transferForm.errors?.['sameAccount']" class="text-danger mt-1">
+                <small><i class="fas fa-exclamation-circle"></i> Source and destination accounts must be
+                  different</small>
+              </div>
+
+              <!-- To Account Details -->
+              <div *ngIf="toAccount" class="mt-2">
+                <div class="card account-card">
+                  <div class="card-body py-2">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <small class="text-muted">Account Holder:</small><br>
+                        <strong>{{ toAccount.accountHolderName }}</strong>
+                      </div>
+                      <div class="col-md-6">
+                        <small class="text-muted">Account Type:</small><br>
+                        <span class="badge" [class.bg-success]="toAccount.accountType === 'Checking'"
+                          [class.bg-warning]="toAccount.accountType === 'Savings'">
+                          {{ toAccount.accountType }}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Amount -->
+            <div class="mb-3">
+              <label for="amount" class="form-label">
+                Transfer Amount <span class="text-danger">*</span>
+              </label>
+              <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input type="number" id="amount" class="form-control" formControlName="amount"
+                  [class.is-invalid]="(formControls['amount'].invalid && formControls['amount'].touched) || hasInsufficientBalance"
+                  min="0.01" step="0.01" placeholder="0.00">
+              </div>
+
+              <div *ngIf="formControls['amount'].invalid && formControls['amount'].touched" class="invalid-feedback">
+                <div *ngIf="formControls['amount'].errors?.['required']">
+                  Transfer amount is required
+                </div>
+                <div *ngIf="formControls['amount'].errors?.['min']">
+                  Minimum transfer amount is $0.01
+                </div>
+              </div>
+
+              <!-- Insufficient Balance Error -->
+              <div *ngIf="hasInsufficientBalance" class="text-danger mt-1">
+                <small><i class="fas fa-exclamation-circle"></i> Insufficient balance. Available: {{ fromAccount ?
+                  formatCurrency(fromAccount.balance) : '$0.00' }}</small>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div class="mb-3">
+              <label for="description" class="form-label">
+                Description <span class="text-muted">(Optional)</span>
+              </label>
+              <input type="text" id="description" class="form-control" formControlName="description"
+                [class.is-invalid]="formControls['description'].invalid && formControls['description'].touched"
+                placeholder="Enter transfer description" maxlength="100">
+
+              <div *ngIf="formControls['description'].invalid && formControls['description'].touched"
+                class="invalid-feedback">
+                Description cannot exceed 100 characters
+              </div>
+
+              <div class="form-text">
+                <small class="text-muted">{{ formControls['description'].value?.length || 0 }}/100 characters</small>
+              </div>
+            </div>
+
+            <!-- Transfer Summary -->
+            <div *ngIf="fromAccount && toAccount && formControls['amount'].value" class="alert alert-info">
+              <h6><i class="fas fa-info-circle me-2"></i>Transfer Summary</h6>
+              <div class="row">
+                <div class="col-md-6">
+                  <strong>From:</strong> {{ fromAccount.accountNumber }} ({{ fromAccount.accountType }})<br>
+                  <strong>To:</strong> {{ toAccount.accountNumber }} ({{ toAccount.accountType }})
+                </div>
+                <div class="col-md-6">
+                  <strong>Amount:</strong> {{ formatCurrency(formControls['amount'].value) }}<br>
+                  <strong>Remaining Balance:</strong>
+                  <span [class.text-danger]="hasInsufficientBalance">
+                    {{ formatCurrency(fromAccount.balance - formControls['amount'].value) }}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Message -->
+            <div *ngIf="submitMessage" class="alert" [class.alert-success]="submitMessage.includes('successfully')"
+              [class.alert-danger]="submitMessage.includes('failed')">
+              {{ submitMessage }}
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <app-custom-button text="Back" type="secondary" size="md" (clicked)="navigateBack()">
+              </app-custom-button>
+
+              <app-custom-button text="{{ isSubmitting ? 'Processing...' : 'Transfer Funds' }}" type="success" size="md"
+                [disabled]="transferForm.invalid || isSubmitting || hasInsufficientBalance" (clicked)="onSubmit()">
+              </app-custom-button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

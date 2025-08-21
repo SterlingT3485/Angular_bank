@@ -1,0 +1,58 @@
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark banking-header">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/dashboard">
+      <i class="fas fa-university me-2"></i>
+      {{ title }}
+    </a>
+
+    <button class="navbar-toggler" type="button" (click)="toggleMenu()" [attr.aria-expanded]="!isMenuCollapsed"
+      aria-controls="navbarNav" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isMenuCollapsed">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard" routerLinkActive="active" (click)="isMenuCollapsed = true">
+            <i class="fas fa-tachometer-alt me-1"></i>
+            Dashboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/create-account" routerLinkActive="active" (click)="isMenuCollapsed = true">
+            <i class="fas fa-plus-circle me-1"></i>
+            Create Account
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/transfer" routerLinkActive="active" (click)="isMenuCollapsed = true">
+            <i class="fas fa-exchange-alt me-1"></i>
+            Transfer
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/history" routerLinkActive="active" (click)="isMenuCollapsed = true">
+            <i class="fas fa-history me-1"></i>
+            History
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<!-- Footer -->
+<footer class="banking-header text-white text-center py-3 mt-5">
+  <div class="container">
+    <p class="mb-0">
+      <i class="fas fa-shield-alt me-2"></i>
+      Secure Banking Application &copy; {{ currentYear }}
+    </p>
+  </div>
+</footer>
