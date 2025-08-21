@@ -2,6 +2,26 @@
 
 A complete banking web application built with **Angular 20** and **Bootstrap** that allows users to manage multiple accounts and transfer funds between them.
 
+## 🎯 Application Structure
+
+```
+src/app/
+├── models/                     # Data models
+│   ├── account.ts             # Account interface
+│   └── transaction.ts         # Transaction interface
+├── services/                   # Business logic services
+│   └── banking.ts             # Banking service (CRUD operations)
+├── shared/                     # Shared components
+│   └── components/
+│       └── custom-button/     # Reusable button component
+├── pages/                     # Page components
+│   ├── dashboard/            # Main dashboard
+│   ├── create-account/       # Account creation
+│   ├── transfer/             # Fund transfer
+│   └── history/              # Transaction history
+└── app.routes.ts             # Application routing
+```
+
 ## 🌟 Features
 
 ### Core Functionality
@@ -80,26 +100,6 @@ A complete banking web application built with **Angular 20** and **Bootstrap** t
 - [x] **Custom, reusable button component**
 - [x] **Incorporated into the application**
 - [x] **Placed in a shared module** (separate from main module)
-
-## 🎯 Application Structure
-
-```
-src/app/
-├── models/                     # Data models
-│   ├── account.ts             # Account interface
-│   └── transaction.ts         # Transaction interface
-├── services/                   # Business logic services
-│   └── banking.ts             # Banking service (CRUD operations)
-├── shared/                     # Shared components
-│   └── components/
-│       └── custom-button/     # Reusable button component
-├── pages/                     # Page components
-│   ├── dashboard/            # Main dashboard
-│   ├── create-account/       # Account creation
-│   ├── transfer/             # Fund transfer
-│   └── history/              # Transaction history
-└── app.routes.ts             # Application routing
-```
 
 ## 🏃‍♂️ Quick Start
 
