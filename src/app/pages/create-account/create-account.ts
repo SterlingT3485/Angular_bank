@@ -34,45 +34,39 @@ export class CreateAccountComponent {
   }
 
   onSubmit() {
-    if (this.accountForm.valid && !this.isSubmitting) {
-      this.isSubmitting = true;
-      const { accountHolderName, accountType, initialBalance } = this.accountForm.value;
-
-      try {
-        const newAccount = this.bankingService.createAccount(
-          accountHolderName,
-          accountType,
-          initialBalance
-        );
-
-        this.submitMessage = `Account created successfully! Account Number: ${newAccount.accountNumber}`;
-
-        // Reset form
-        this.accountForm.reset({
-          accountType: 'Checking',
-          initialBalance: 0
-        });
-
-        // Navigate to dashboard after 2 seconds
-        setTimeout(() => {
-          this.router.navigate(['/dashboard']);
-        }, 2000);
-
-      } catch (error) {
-        this.submitMessage = 'Error creating account. Please try again.';
-      } finally {
-        this.isSubmitting = false;
-      }
-    } else {
-      this.markFormGroupTouched();
+    // Early return if form is not ready for submission - prevents any error flashing
+    if (this.accountForm.invalid || this.isSubmitting) {
+      return;
     }
-  }
 
-  private markFormGroupTouched() {
-    Object.keys(this.accountForm.controls).forEach(key => {
-      const control = this.accountForm.get(key);
-      control?.markAsTouched();
-    });
+    this.isSubmitting = true;
+    const { accountHolderName, accountType, initialBalance } = this.accountForm.value;
+
+    try {
+      const newAccount = this.bankingService.createAccount(
+        accountHolderName,
+        accountType,
+        initialBalance
+      );
+
+      this.submitMessage = `Account created successfully! Account Number: ${newAccount.accountNumber}`;
+
+      // Reset form
+      this.accountForm.reset({
+        accountType: 'Checking',
+        initialBalance: 0
+      });
+
+      // Navigate to dashboard after 2 seconds
+      setTimeout(() => {
+        this.router.navigate(['/dashboard']);
+      }, 2000);
+
+    } catch (error) {
+      this.submitMessage = 'Error creating account. Please try again.';
+    } finally {
+      this.isSubmitting = false;
+    }
   }
 
   navigateBack() {

@@ -95,40 +95,34 @@ export class TransferComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.transferForm.valid && !this.isSubmitting && !this.hasInsufficientBalance) {
-      this.isSubmitting = true;
-      const { fromAccountId, toAccountId, amount, description } = this.transferForm.value;
-
-      const success = this.bankingService.transferFunds(
-        fromAccountId,
-        toAccountId,
-        parseFloat(amount),
-        description || 'Transfer'
-      );
-
-      if (success) {
-        this.submitMessage = `Transfer of $${amount} completed successfully!`;
-        this.transferForm.reset();
-
-        // Navigate to dashboard after 2 seconds
-        setTimeout(() => {
-          this.router.navigate(['/dashboard']);
-        }, 2000);
-      } else {
-        this.submitMessage = 'Transfer failed. Please check your account details and balance.';
-      }
-
-      this.isSubmitting = false;
-    } else {
-      this.markFormGroupTouched();
+    // Early return if form is not ready for submission - prevents any error flashing
+    if (this.transferForm.invalid || this.isSubmitting || this.hasInsufficientBalance) {
+      return;
     }
-  }
 
-  private markFormGroupTouched() {
-    Object.keys(this.transferForm.controls).forEach(key => {
-      const control = this.transferForm.get(key);
-      control?.markAsTouched();
-    });
+    this.isSubmitting = true;
+    const { fromAccountId, toAccountId, amount, description } = this.transferForm.value;
+
+    const success = this.bankingService.transferFunds(
+      fromAccountId,
+      toAccountId,
+      parseFloat(amount),
+      description || 'Transfer'
+    );
+
+    if (success) {
+      this.submitMessage = `Transfer of $${amount} completed successfully!`;
+      this.transferForm.reset();
+
+      // Navigate to dashboard after 2 seconds
+      setTimeout(() => {
+        this.router.navigate(['/dashboard']);
+      }, 2000);
+    } else {
+      this.submitMessage = 'Transfer failed. Please check your account details and balance.';
+    }
+
+    this.isSubmitting = false;
   }
 
   navigateBack() {
