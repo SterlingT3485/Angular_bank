@@ -20,7 +20,7 @@ export class BankingService {
   }
 
   // Create a new user account
-  createAccount(accountHolderName: string, accountType: 'Checking' | 'Savings', initialBalance: number): Account {
+  createAccount(accountHolderName: string, accountType: 'Chequing' | 'Savings', initialBalance: number): Account {
     const accountNumber = this.generateAccountNumber();
     const newAccount: Account = {
       id: this.generateId(),

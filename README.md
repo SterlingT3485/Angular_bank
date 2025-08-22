@@ -37,9 +37,9 @@ src/app/
 - 🔄 **Conditional button rendering** based on account type selection
 
 ### Account Creation & Conditional Styling
-- 💳 **Account Type Selection**: Choose between Checking or Savings accounts
+- 💳 **Account Type Selection**: Choose between Chequing or Savings accounts
 - 🎯 **Conditional Button Styling**: 
-  - **Checking Account**: Green gradient buttons
+  - **Chequing Account**: Green gradient buttons
   - **Savings Account**: Orange/yellow gradient buttons
 - 📄 **Account Type Radio Buttons**: Easy selection with visual feedback
 - 🔘 **Dynamic Button Text**: Button displays account type-specific text
@@ -86,7 +86,7 @@ src/app/
 - [x] **Well-structured and easy to manage forms**
 
 ### ✅ Account Creation with Conditional Styling
-- [x] **Account type selection** (Checking or Savings) via radio buttons
+- [x] **Account type selection** (Chequing or Savings) via radio buttons
 - [x] **Conditional button rendering** based on account type
 - [x] **Different button styles** for different account types
 
@@ -133,7 +133,7 @@ http://localhost:4200
 
 ### 2. **Create Account** ➕
 - Enter account holder name
-- Choose account type (Checking/Savings)
+- Choose account type (Chequing/Savings)
 - Set initial balance (minimum $0.00)
 - Account number auto-generated
 
@@ -157,7 +157,7 @@ http://localhost:4200
 ```typescript
 <app-custom-button
   text="Create Account"
-  [accountType]="'Checking'"
+  [accountType]="'Chequing'"
   type="primary"
   size="lg"
   [disabled]="false"
@@ -177,7 +177,7 @@ http://localhost:4200
 this.accountForm = this.fb.group({
   accountHolderName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
   initialBalance: [0, [Validators.required, Validators.min(0)]],
-  accountType: ['Checking', Validators.required]
+  accountType: ['Chequing', Validators.required]
 });
 
 // Transfer form with custom validators

@@ -1,14 +1,14 @@
 /* Account type specific button styles */
-.btn-checking {
-  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-  color: white;
+.btn-chequing {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: #fff;
   border: none;
   transition: all 0.3s ease;
 }
 
-.btn-checking:hover {
-  background: linear-gradient(135deg, #218838 0%, #17a2b8 100%);
-  color: white;
+.btn-chequing:hover {
+  background: linear-gradient(135deg, #218838, #17a2b8);
+  color: #fff;
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }

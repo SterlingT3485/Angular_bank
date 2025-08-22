@@ -25,7 +25,7 @@ export class CreateAccountComponent {
     this.accountForm = this.fb.group({
       accountHolderName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
       initialBalance: [0, [Validators.required, Validators.min(0)]],
-      accountType: ['Checking', Validators.required]
+      accountType: ['Chequing', Validators.required]
     });
   }
 
@@ -53,7 +53,7 @@ export class CreateAccountComponent {
 
       // Reset form
       this.accountForm.reset({
-        accountType: 'Checking',
+        accountType: 'Chequing',
         initialBalance: 0
       });
 

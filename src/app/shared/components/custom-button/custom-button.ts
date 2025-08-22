@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 export class CustomButtonComponent {
   @Input() text: string = '';
   @Input() type: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' = 'primary';
-  @Input() accountType: 'Checking' | 'Savings' | null = null;
+  @Input() accountType: 'Chequing' | 'Savings' | null = null;
   @Input() disabled: boolean = false;
   @Input() size: 'sm' | 'md' | 'lg' = 'md';
   @Output() clicked = new EventEmitter<void>();
@@ -26,8 +26,8 @@ export class CustomButtonComponent {
     // Add type-based classes
     if (this.accountType) {
       // Account type specific styling
-      if (this.accountType === 'Checking') {
-        classes += ' btn-checking';
+      if (this.accountType === 'Chequing') {
+        classes += ' btn-chequing';
       } else if (this.accountType === 'Savings') {
         classes += ' btn-savings';
       }

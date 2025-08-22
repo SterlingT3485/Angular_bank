@@ -85,7 +85,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getAccountTypeIcon(accountType: string): string {
-    return accountType === 'Checking' ? 'fas fa-check-circle' : 'fas fa-piggy-bank';
+    return accountType === 'Chequing' ? 'fas fa-check-circle' : 'fas fa-piggy-bank';
   }
 
   getTransactionIcon(transaction: Transaction): string {

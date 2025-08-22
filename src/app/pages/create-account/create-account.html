@@ -42,13 +42,13 @@
               </label>
               <select id="accountType" class="form-select" formControlName="accountType"
                 [class.is-invalid]="formControls['accountType'].invalid && formControls['accountType'].touched">
-                <option value="Checking">Checking Account</option>
+                <option value="Chequing">Chequing Account</option>
                 <option value="Savings">Savings Account</option>
               </select>
 
               <div class="form-text">
-                <small *ngIf="formControls['accountType'].value === 'Checking'" class="text-success">
-                  <i class="fas fa-check-circle"></i> Checking accounts offer easy access to your funds
+                <small *ngIf="formControls['accountType'].value === 'Chequing'" class="text-success">
+                  <i class="fas fa-check-circle"></i> Chequing accounts offer easy access to your funds
                 </small>
                 <small *ngIf="formControls['accountType'].value === 'Savings'" class="text-warning">
                   <i class="fas fa-piggy-bank"></i> Savings accounts help you earn interest on your deposits
