@@ -1,9 +1,86 @@
-.chequing {
-  background-color: blue;
-  color: white;
+/* Account Type Radio Button Cards */
+.account-type-card {
+  border: 2px solid #e9ecef;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-color: #fff;
+  position: relative;
 }
 
-.savings {
-  background-color: green;
-  color: white;
+.account-type-card:hover {
+  border-color: #6c757d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.account-type-card .form-check-input {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.account-type-card .form-check-input:checked {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.account-type-card .form-check-label {
+  cursor: pointer;
+  margin: 0;
+}
+
+/* Selected state styling */
+.account-type-card:has(.form-check-input:checked) {
+  border-color: #0d6efd;
+  background-color: #f8f9ff;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+/* Chequing account specific styling */
+.account-type-card:has(#chequing:checked) {
+  border-color: #198754;
+  background-color: #f8fff9;
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.15);
+}
+
+.account-type-card:has(#chequing:checked) .form-check-input:checked {
+  background-color: #198754;
+  border-color: #198754;
+}
+
+/* Savings account specific styling */
+.account-type-card:has(#savings:checked) {
+  border-color: #fd7e14;
+  background-color: #fffaf6;
+  box-shadow: 0 0 0 0.25rem rgba(253, 126, 20, 0.15);
+}
+
+.account-type-card:has(#savings:checked) .form-check-input:checked {
+  background-color: #fd7e14;
+  border-color: #fd7e14;
+}
+
+/* Icon animations */
+.account-type-card i {
+  transition: transform 0.3s ease;
+}
+
+.account-type-card:hover i {
+  transform: scale(1.1);
+}
+
+.account-type-card:has(.form-check-input:checked) i {
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .account-type-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
 }
