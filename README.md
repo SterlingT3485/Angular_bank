@@ -22,6 +22,355 @@ src/app/
 └── app.routes.ts             # Application routing
 ```
 
+## 🏗️ Architecture & UML Diagrams
+
+### 📊 System Class Diagram
+
+```mermaid
+classDiagram
+    %% Models
+    class Account {
+        +string id
+        +string accountNumber
+        +string accountType
+        +string accountHolderName
+        +number balance
+        +Date createdDate
+    }
+
+    class Transaction {
+        +string id
+        +string fromAccountId
+        +string toAccountId
+        +number amount
+        +Date transactionDate
+        +string description
+        +string type
+    }
+
+    %% Services
+    class BankingService {
+        -BehaviorSubject accountsSubject
+        -BehaviorSubject transactionsSubject
+        +Observable accounts$
+        +Observable transactions$
+        +createAccount(name, type, balance) Account
+        +transferFunds(fromId, toId, amount, desc) boolean
+        +getTransactionHistory(accountId) Transaction[]
+        +getTotalBalance() number
+        -loadData() void
+        -saveData() void
+        -generateAccountNumber() string
+        -generateId() string
+    }
+
+    %% Components
+    class AppComponent {
+        +string title
+    }
+
+    class DashboardComponent {
+        +Account[] accounts
+        +Transaction[] recentTransactions
+        +number totalBalance
+        +ngOnInit() void
+        +loadAccounts() void
+        +loadRecentTransactions() void
+        +calculateTotalBalance() void
+        +navigateToCreateAccount() void
+        +navigateToTransfer() void
+        +navigateToHistory() void
+        +getAccountTypeIcon(type) string
+        +formatCurrency(amount) string
+    }
+
+    class CreateAccountComponent {
+        +FormGroup accountForm
+        +boolean isSubmitting
+        +string submitMessage
+        +get formControls() AbstractControl
+        +onSubmit() void
+        +navigateBack() void
+    }
+
+    class TransferComponent {
+        +FormGroup transferForm
+        +Account[] accounts
+        +boolean isSubmitting
+        +string submitMessage
+        +get formControls() AbstractControl
+        +get fromAccount() Account
+        +get toAccount() Account
+        +get availableToAccounts() Account[]
+        +get hasInsufficientBalance() boolean
+        +ngOnInit() void
+        +loadAccounts() void
+        +setupFormValidation() void
+        +differentAccountsValidator() ValidatorFn
+        +onSubmit() void
+        +navigateBack() void
+        +formatCurrency(amount) string
+    }
+
+    class HistoryComponent {
+        +FormGroup filterForm
+        +Account[] accounts
+        +Transaction[] transactions
+        +Transaction[] filteredTransactions
+        +ngOnInit() void
+        +loadAccounts() void
+        +loadTransactions() void
+        +applyFilters() void
+        +clearFilters() void
+        +exportTransactions() void
+        +navigateBack() void
+        +navigateToTransfer() void
+        +navigateToCreateAccount() void
+        +formatCurrency(amount) string
+    }
+
+    class CustomButtonComponent {
+        +string text
+        +string type
+        +string accountType
+        +boolean disabled
+        +string size
+        +EventEmitter clicked
+        +get buttonClasses() string
+        +onClick() void
+    }
+
+    %% Relationships
+    BankingService --> Account : manages
+    BankingService --> Transaction : manages
+    DashboardComponent --> BankingService : uses
+    DashboardComponent --> Account : displays
+    DashboardComponent --> Transaction : displays
+    CreateAccountComponent --> BankingService : uses
+    CreateAccountComponent --> Account : creates
+    TransferComponent --> BankingService : uses
+    TransferComponent --> Account : transfers between
+    TransferComponent --> Transaction : creates
+    HistoryComponent --> BankingService : uses
+    HistoryComponent --> Transaction : displays
+    HistoryComponent --> Account : filters by
+    
+    DashboardComponent --> CustomButtonComponent : uses
+    CreateAccountComponent --> CustomButtonComponent : uses
+    TransferComponent --> CustomButtonComponent : uses
+    HistoryComponent --> CustomButtonComponent : uses
+```
+
+### 🔄 Component Interaction Flow
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant D as Dashboard
+    participant C as CreateAccount
+    participant T as Transfer
+    participant H as History
+    participant B as BankingService
+    participant S as LocalStorage
+
+    %% Dashboard Flow
+    U->>D: Navigate to Dashboard
+    D->>B: Load accounts & transactions
+    B->>S: Retrieve data
+    S-->>B: Return data
+    B-->>D: Observable streams
+    D-->>U: Display accounts & balance
+
+    %% Create Account Flow
+    U->>C: Create new account
+    C->>U: Show form
+    U->>C: Submit form data
+    C->>B: createAccount(name, type, balance)
+    B->>S: Save new account
+    B-->>C: Return new account
+    C-->>U: Success message
+    C->>D: Navigate to dashboard
+
+    %% Transfer Flow
+    U->>T: Transfer funds
+    T->>B: Load accounts
+    B-->>T: Available accounts
+    T-->>U: Show transfer form
+    U->>T: Submit transfer
+    T->>B: transferFunds(from, to, amount)
+    B->>S: Update accounts & add transaction
+    B-->>T: Success/failure
+    T-->>U: Show result
+    T->>D: Navigate to dashboard
+
+    %% History Flow
+    U->>H: View history
+    H->>B: Load transactions & accounts
+    B-->>H: Transaction data
+    H-->>U: Display filtered transactions
+    U->>H: Apply filters
+    H-->>U: Update display
+    U->>H: Export CSV
+    H-->>U: Download file
+```
+
+### 🎯 Data Flow Architecture
+
+```mermaid
+graph TD
+    %% Data Layer
+    LS[Local Storage] --> BS[Banking Service]
+    BS --> ABS[accounts$ BehaviorSubject]
+    BS --> TBS[transactions$ BehaviorSubject]
+    
+    %% Observable Streams
+    ABS --> AO[accounts$ Observable]
+    TBS --> TO[transactions$ Observable]
+    
+    %% Components subscribing to data
+    AO --> DC[Dashboard Component]
+    AO --> TC[Transfer Component] 
+    AO --> HC[History Component]
+    
+    TO --> DC
+    TO --> HC
+    
+    %% User Interactions
+    DC --> BS
+    CC[Create Account] --> BS
+    TC --> BS
+    HC --> BS
+    
+    %% Service updates storage
+    BS --> LS
+    
+    %% UI Updates
+    DC --> UI1[Dashboard UI]
+    CC --> UI2[Create Account UI]
+    TC --> UI3[Transfer UI]
+    HC --> UI4[History UI]
+    
+    %% Shared Components
+    CB[Custom Button] --> UI1
+    CB --> UI2
+    CB --> UI3
+    CB --> UI4
+    
+    style BS fill:#e1f5fe
+    style LS fill:#f3e5f5
+    style AO fill:#e8f5e8
+    style TO fill:#e8f5e8
+    style CB fill:#fff3e0
+```
+
+### 🧩 Component Dependency Graph
+
+```mermaid
+graph LR
+    %% Core App
+    APP[App Component] --> ROUTER[Router Outlet]
+    
+    %% Routes
+    ROUTER --> DASH[Dashboard Component]
+    ROUTER --> CREATE[Create Account Component]
+    ROUTER --> TRANSFER[Transfer Component]
+    ROUTER --> HISTORY[History Component]
+    
+    %% Shared Dependencies
+    DASH --> BANK[Banking Service]
+    CREATE --> BANK
+    TRANSFER --> BANK
+    HISTORY --> BANK
+    
+    DASH --> BTN[Custom Button Component]
+    CREATE --> BTN
+    TRANSFER --> BTN
+    HISTORY --> BTN
+    
+    %% Angular Dependencies
+    DASH --> COMMON[CommonModule]
+    CREATE --> COMMON
+    CREATE --> REACTIVE[ReactiveFormsModule]
+    TRANSFER --> COMMON
+    TRANSFER --> REACTIVE
+    HISTORY --> COMMON
+    HISTORY --> REACTIVE
+    
+    %% Models
+    BANK --> ACC[Account Model]
+    BANK --> TRANS[Transaction Model]
+    
+    %% External Dependencies
+    BANK --> RXJS[RxJS BehaviorSubject]
+    BANK --> STORAGE[Local Storage API]
+    
+    style BANK fill:#2196f3,color:#fff
+    style BTN fill:#ff9800,color:#fff
+    style ACC fill:#4caf50,color:#fff
+    style TRANS fill:#4caf50,color:#fff
+```
+
+### 🔧 Service Architecture
+
+```mermaid
+graph TB
+    %% Service Layer
+    subgraph "Banking Service Layer"
+        BS[Banking Service]
+        BS --> CM[Create Management]
+        BS --> TM[Transfer Management]
+        BS --> DM[Data Management]
+        BS --> VM[Validation Management]
+    end
+    
+    %% Data Persistence
+    subgraph "Data Persistence Layer"
+        LS[Local Storage]
+        ALS[Accounts Storage]
+        TLS[Transactions Storage]
+        LS --> ALS
+        LS --> TLS
+    end
+    
+    %% State Management
+    subgraph "State Management Layer"
+        AS[Accounts Subject]
+        TS[Transactions Subject]
+        AO[Accounts Observable]
+        TO[Transactions Observable]
+        AS --> AO
+        TS --> TO
+    end
+    
+    %% Component Layer
+    subgraph "Component Layer"
+        DC[Dashboard]
+        CC[Create Account]
+        TC[Transfer]
+        HC[History]
+    end
+    
+    %% Connections
+    DM --> LS
+    BS --> AS
+    BS --> TS
+    AO --> DC
+    AO --> TC
+    AO --> HC
+    TO --> DC
+    TO --> HC
+    
+    DC --> BS
+    CC --> BS
+    TC --> BS
+    HC --> BS
+    
+    style BS fill:#1976d2,color:#fff
+    style LS fill:#757575,color:#fff
+    style AS fill:#388e3c,color:#fff
+    style TS fill:#388e3c,color:#fff
+```
+
 ## 🌟 Features
 
 ### Core Functionality
