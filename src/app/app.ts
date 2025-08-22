@@ -13,10 +13,10 @@ export class AppComponent {
   title = 'Banking Application';
   currentYear = new Date().getFullYear();
 
-  // 添加导航栏折叠状态
+  // Navigation bar collapse state
   isMenuCollapsed = true;
 
-  // 切换菜单状态
+  // Toggle menu state
   toggleMenu() {
     this.isMenuCollapsed = !this.isMenuCollapsed;
   }
