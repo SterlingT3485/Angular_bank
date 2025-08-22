@@ -1,8 +1,8 @@
-# 🏦 Banking Transactions Web Application
+# Banking Transactions Web Application
 
-A complete banking web application built with **Angular 20** and **Bootstrap** that allows users to manage multiple accounts and transfer funds between them.
+A complete banking web application built with Angular 20 and Bootstrap that allows users to manage multiple accounts and transfer funds between them.
 
-## 🎯 Application Structure
+## Application Structure
 
 ```
 src/app/
@@ -22,9 +22,9 @@ src/app/
 └── app.routes.ts             # Application routing
 ```
 
-## 🏗️ Architecture & UML Diagrams
+## Architecture & UML Diagrams
 
-### 📊 System Class Diagram
+### System Class Diagram
 
 ```mermaid
 classDiagram
@@ -161,7 +161,7 @@ classDiagram
     HistoryComponent --> CustomButtonComponent : uses
 ```
 
-### 🔄 Component Interaction Flow
+### Component Interaction Flow
 
 ```mermaid
 sequenceDiagram
@@ -214,7 +214,7 @@ sequenceDiagram
     H-->>U: Download file
 ```
 
-### 🎯 Data Flow Architecture
+### Data Flow Architecture
 
 ```mermaid
 graph TD
@@ -263,7 +263,7 @@ graph TD
     style CB fill:#fff3e0
 ```
 
-### 🧩 Component Dependency Graph
+### Component Dependency Graph
 
 ```mermaid
 graph LR
@@ -310,7 +310,7 @@ graph LR
     style TRANS fill:#4caf50,color:#fff
 ```
 
-### 🔧 Service Architecture
+### Service Architecture
 
 ```mermaid
 graph TB
@@ -371,44 +371,307 @@ graph TB
     style TS fill:#388e3c,color:#fff
 ```
 
-## 🌟 Features
+## System Requirements
+
+### Runtime Dependencies
+
+- **Node.js**: Version 18.19.0 or higher (LTS recommended)
+- **npm**: Version 9.2.0 or higher (comes with Node.js)
+- **Web Browser**: Modern browser with ES2022 support
+  - Chrome 91+
+  - Firefox 89+
+  - Safari 14.1+
+  - Edge 91+
+
+### Development Dependencies
+
+- **Angular CLI**: Version 18.0.0 or higher
+- **TypeScript**: Version 5.4.0 or higher
+- **RxJS**: Version 7.8.0 or higher
+
+## Installation and Setup
+
+### Prerequisites Installation
+
+1. **Install Node.js**
+   ```bash
+   # Download from https://nodejs.org/en/download/
+   # Or using package managers:
+   
+   # macOS (using Homebrew)
+   brew install node
+   
+   # Ubuntu/Debian
+   sudo apt update
+   sudo apt install nodejs npm
+   
+   # Windows (using Chocolatey)
+   choco install nodejs
+   ```
+
+2. **Verify Installation**
+   ```bash
+   node --version    # Should output v18.19.0 or higher
+   npm --version     # Should output 9.2.0 or higher
+   ```
+
+3. **Install Angular CLI (Global)**
+   ```bash
+   npm install -g @angular/cli@latest
+   
+   # Verify installation
+   ng version
+   ```
+
+### Project Setup
+
+1. **Clone or Download Project**
+   ```bash
+   # If using Git
+   git clone <repository-url>
+   cd banking-app
+   
+   # Or extract downloaded ZIP file
+   ```
+
+2. **Navigate to Project Directory**
+   ```bash
+   cd Angular_bank
+   ```
+
+3. **Install Project Dependencies**
+   ```bash
+   # Install all dependencies from package.json
+   npm install
+   
+   # This will install:
+   # - Angular framework and dependencies
+   # - RxJS for reactive programming
+   # - Bootstrap for UI styling
+   # - Font Awesome for icons
+   # - Development tools and build dependencies
+   ```
+
+4. **Verify Dependencies Installation**
+   ```bash
+   # Check if node_modules folder was created
+   ls -la node_modules/
+   
+   # Verify key packages
+   npm list @angular/core
+   npm list bootstrap
+   npm list rxjs
+   ```
+
+## Build and Development
+
+### Development Server
+
+```bash
+# Start development server
+ng serve
+
+# Options:
+ng serve --port 4200              # Default port
+ng serve --host 0.0.0.0          # Allow external connections
+ng serve --open                   # Automatically open browser
+ng serve --ssl                    # Use HTTPS
+ng serve --proxy-config proxy.conf.json  # Use proxy configuration
+
+# Development server will be available at:
+# http://localhost:4200
+```
+
+### Production Build
+
+```bash
+# Build for production
+ng build
+
+# Build with specific configuration
+ng build --configuration production
+ng build --configuration development
+
+# Build with custom output path
+ng build --output-path dist/custom-folder
+
+# Build with source maps (for debugging)
+ng build --source-map
+
+# Analyze bundle size
+ng build --stats-json
+npx webpack-bundle-analyzer dist/banking-app/stats.json
+```
+
+### Build Optimization
+
+The production build includes:
+- **Code minification** and **uglification**
+- **Tree shaking** to remove unused code
+- **Dead code elimination**
+- **Lazy loading** for route-based code splitting
+- **AOT compilation** for better performance
+- **Service worker** caching (if enabled)
+
+### Testing
+
+```bash
+# Run unit tests
+ng test
+
+# Run end-to-end tests
+ng e2e
+
+# Generate code coverage report
+ng test --code-coverage
+
+# Run tests in headless mode (CI/CD)
+ng test --browsers ChromeHeadless --watch false
+```
+
+### Code Quality and Linting
+
+```bash
+# Run linting
+ng lint
+
+# Fix linting issues automatically
+ng lint --fix
+
+# Check TypeScript compilation
+ng build --dry-run
+```
+
+## Deployment
+
+### Static Hosting (GitHub Pages, Netlify, Vercel)
+
+```bash
+# Build for production
+ng build --configuration production
+
+# Upload dist/banking-app/ folder contents to hosting provider
+```
+
+### Web Server Deployment
+
+```bash
+# Build for production
+ng build --configuration production
+
+# Copy dist/banking-app/ contents to web server document root
+# Configure server for Single Page Application (SPA):
+
+# Apache (.htaccess)
+# RewriteEngine On
+# RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+# RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+# RewriteRule ^ - [L]
+# RewriteRule ^ /index.html [L]
+
+# Nginx
+# try_files $uri $uri/ /index.html;
+```
+
+### Docker Deployment
+
+```dockerfile
+# Dockerfile
+FROM node:18-alpine AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+COPY . .
+RUN npm run build
+
+FROM nginx:alpine
+COPY --from=build /app/dist/banking-app /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/nginx.conf
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+## Project Dependencies
+
+### Core Dependencies
+
+```json
+{
+  "@angular/animations": "^20.2.1",
+  "@angular/common": "^20.2.1",
+  "@angular/compiler": "^20.2.1",
+  "@angular/core": "^20.2.1",
+  "@angular/forms": "^20.2.1",
+  "@angular/platform-browser": "^20.2.1",
+  "@angular/platform-browser-dynamic": "^20.2.1",
+  "@angular/router": "^20.2.1",
+  "@angular/ssr": "^20.2.1",
+  "bootstrap": "^5.3.0",
+  "express": "^4.18.2",
+  "rxjs": "~7.8.0",
+  "tslib": "^2.3.0",
+  "zone.js": "~0.15.0"
+}
+```
+
+### Development Dependencies
+
+```json
+{
+  "@angular-devkit/build-angular": "^20.2.1",
+  "@angular/cli": "^20.2.1",
+  "@angular/compiler-cli": "^20.2.1",
+  "@types/express": "^4.17.17",
+  "@types/jasmine": "~5.1.0",
+  "@types/node": "^18.18.0",
+  "jasmine-core": "~5.4.0",
+  "karma": "~6.4.0",
+  "karma-chrome-launcher": "~3.2.0",
+  "karma-coverage": "~2.2.0",
+  "karma-jasmine": "~5.1.0",
+  "karma-jasmine-html-reporter": "~2.1.0",
+  "typescript": "~5.6.0"
+}
+```
+
+## Features
 
 ### Core Functionality
-- ✅ **Create new user accounts** with initial balance
-- ✅ **Transfer funds** from one account to another
-- ✅ **View transaction history** for any given account
-- ✅ **Real-time balance updates** and transaction tracking
+- Create new user accounts with initial balance
+- Transfer funds from one account to another
+- View transaction history for any given account
+- Real-time balance updates and transaction tracking
 
 ### User Interface Design
-- 🎨 **Intuitive, user-friendly interface** with modern Bootstrap styling
-- 📱 **Responsive design** that works on all devices
-- ✨ **Custom reusable button component** with account type-specific styling
-- 🔄 **Conditional button rendering** based on account type selection
+- Intuitive, user-friendly interface with modern Bootstrap styling
+- Responsive design that works on all devices
+- Custom reusable button component with account type-specific styling
+- Conditional button rendering based on account type selection
 
 ### Account Creation & Conditional Styling
-- 💳 **Account Type Selection**: Choose between Chequing or Savings accounts
-- 🎯 **Conditional Button Styling**: 
-  - **Chequing Account**: Green gradient buttons
-  - **Savings Account**: Orange/yellow gradient buttons
-- 📄 **Account Type Radio Buttons**: Easy selection with visual feedback
-- 🔘 **Dynamic Button Text**: Button displays account type-specific text
+- Account Type Selection: Choose between Chequing or Savings accounts
+- Conditional Button Styling: 
+  - Chequing Account: Green gradient buttons
+  - Savings Account: Orange/yellow gradient buttons
+- Account Type Radio Buttons: Easy selection with visual feedback
+- Dynamic Button Text: Button displays account type-specific text
 
 ### Form Validations
-- 🛡️ **Comprehensive Input Validation**:
-  - **Balance cannot be negative**
-  - **Appropriate input types** (text for names, number for balance, radio for account type)
-  - **Real-time validation feedback**
-  - **Required field validation**
-  - **Character limits** and **min/max values**
+- Comprehensive Input Validation:
+  - Balance cannot be negative
+  - Appropriate input types (text for names, number for balance, radio for account type)
+  - Real-time validation feedback
+  - Required field validation
+  - Character limits and min/max values
 
 ### Advanced Features
-- 📊 **Transaction Statistics**: Total transactions, money in/out
-- 🔍 **Advanced Filtering**: Filter by account, date range, transaction type
-- 📈 **Portfolio Overview**: Total balance across all accounts
-- 📄 **Export Functionality**: Download transaction history as CSV
-- 💾 **Local Storage**: Data persistence across browser sessions
+- Transaction Statistics: Total transactions, money in/out
+- Advanced Filtering: Filter by account, date range, transaction type
+- Portfolio Overview: Total balance across all accounts
+- Export Functionality: Download transaction history as CSV
+- Local Storage: Data persistence across browser sessions
 
-## 🚀 Technology Stack
+## Technology Stack
 
 - **Frontend Framework**: Angular 20.2.1 (Latest)
 - **Styling**: Bootstrap 5 + Custom CSS
@@ -418,89 +681,67 @@ graph TB
 - **Build Tool**: Angular CLI with Vite
 - **Node.js**: v22.18.0 (Latest LTS)
 
-## 📋 Requirements Fulfilled
+## Requirements Fulfilled
 
-### ✅ Technology Requirements
-- [x] **Angular** for the front-end framework
-- [x] **Bootstrap** for styling and responsive design
+### Technology Requirements
+- [x] Angular for the front-end framework
+- [x] Bootstrap for styling and responsive design
 
-### ✅ Core Functionality
-- [x] **Create a new user account** with an initial balance
-- [x] **Transfer funds** from one account to another
-- [x] **View transaction history** for any given account
+### Core Functionality
+- [x] Create a new user account with an initial balance
+- [x] Transfer funds from one account to another
+- [x] View transaction history for any given account
 
-### ✅ User Interface (UI) Design
-- [x] **Intuitive, user-friendly interface**
-- [x] **Angular's FormBuilder and FormControls** for UI components
-- [x] **Well-structured and easy to manage forms**
+### User Interface (UI) Design
+- [x] Intuitive, user-friendly interface
+- [x] Angular's FormBuilder and FormControls for UI components
+- [x] Well-structured and easy to manage forms
 
-### ✅ Account Creation with Conditional Styling
-- [x] **Account type selection** (Chequing or Savings) via radio buttons
-- [x] **Conditional button rendering** based on account type
-- [x] **Different button styles** for different account types
+### Account Creation with Conditional Styling
+- [x] Account type selection (Chequing or Savings) via radio buttons
+- [x] Conditional button rendering based on account type
+- [x] Different button styles for different account types
 
-### ✅ Form Validations
-- [x] **Reasonable input validators**
-- [x] **Balance cannot be negative**
-- [x] **Suitable input types** for different fields
-- [x] **Character limits** (names: max 50 chars)
+### Form Validations
+- [x] Reasonable input validators
+- [x] Balance cannot be negative
+- [x] Suitable input types for different fields
+- [x] Character limits (names: max 50 chars)
 
-### ✅ Reusable Components
-- [x] **Custom, reusable button component**
-- [x] **Incorporated into the application**
-- [x] **Placed in a shared module** (separate from main module)
+### Reusable Components
+- [x] Custom, reusable button component
+- [x] Incorporated into the application
+- [x] Placed in a shared module (separate from main module)
 
-## 🏃‍♂️ Quick Start
+## Usage Guide
 
-### Prerequisites
-- Node.js v22.12+ (recommended: v22.18.0)
-- npm v10.9+
-- Angular CLI v20.2+
-
-### Installation & Setup
-```bash
-# Navigate to project directory
-cd angular_bank/banking-app
-
-# Install dependencies
-npm install
-
-# Start development server
-ng serve
-
-# Open in browser
-http://localhost:4200
-```
-
-## 💡 Usage Guide
-
-### 1. **Dashboard** 📊
+### 1. Dashboard
 - View all your accounts and balances
 - See recent transaction activity
 - Quick access to all banking functions
 - Portfolio overview with total balance
 
-### 2. **Create Account** ➕
+### 2. Create Account
 - Enter account holder name
 - Choose account type (Chequing/Savings)
 - Set initial balance (minimum $0.00)
 - Account number auto-generated
 
-### 3. **Transfer Funds** 💸
+### 3. Transfer Funds
 - Select source account (with balance display)
 - Choose destination account
 - Enter transfer amount (with balance validation)
 - Add optional description
 - Real-time balance verification
 
-### 4. **Transaction History** 📈
+### 4. Transaction History
 - Filter by specific account
 - Date range filtering
 - Transaction type filtering
 - Export data to CSV
 - Detailed transaction information
 
-## 🔧 Key Components
+## Key Components
 
 ### Custom Button Component
 ```typescript
@@ -515,10 +756,10 @@ http://localhost:4200
 ```
 
 ### Banking Service Features
-- **Account Management**: Create, read, update accounts
-- **Transaction Processing**: Transfer funds with validation
-- **Data Persistence**: Local storage integration
-- **Real-time Updates**: Observable-based state management
+- Account Management: Create, read, update accounts
+- Transaction Processing: Transfer funds with validation
+- Data Persistence: Local storage integration
+- Real-time Updates: Observable-based state management
 
 ### Form Validation Examples
 ```typescript
@@ -538,55 +779,83 @@ this.transferForm = this.fb.group({
 });
 ```
 
-## 🎨 Design Features
+## Design Features
 
-- **Modern Banking UI**: Professional gradient headers and card designs
-- **Account Type Indicators**: Visual badges and icons for different account types
-- **Responsive Grid Layout**: Works seamlessly on desktop, tablet, and mobile
-- **Interactive Feedback**: Hover effects, loading states, and success/error messages
-- **Accessibility**: Proper ARIA labels, semantic HTML, and keyboard navigation
+- Modern Banking UI: Professional gradient headers and card designs
+- Account Type Indicators: Visual badges and icons for different account types
+- Responsive Grid Layout: Works seamlessly on desktop, tablet, and mobile
+- Interactive Feedback: Hover effects, loading states, and success/error messages
+- Accessibility: Proper ARIA labels, semantic HTML, and keyboard navigation
 
-## 🔐 Security & Validation
+## Security & Validation
 
-- **Client-side Validation**: Comprehensive form validation with real-time feedback
-- **Business Logic Validation**: Prevent invalid transfers (insufficient funds, same account)
-- **Data Integrity**: Type-safe models and interfaces
-- **Error Handling**: Graceful error handling with user-friendly messages
+- Client-side Validation: Comprehensive form validation with real-time feedback
+- Business Logic Validation: Prevent invalid transfers (insufficient funds, same account)
+- Data Integrity: Type-safe models and interfaces
+- Error Handling: Graceful error handling with user-friendly messages
 
-## 📱 Mobile-First Design
+## Mobile-First Design
 
-- **Responsive Navigation**: Collapsible navbar for mobile devices
-- **Touch-Friendly Interface**: Large buttons and intuitive gestures
-- **Optimized Forms**: Mobile-friendly form layouts and input types
-- **Performance**: Lazy-loaded routes and optimized bundle size
+- Responsive Navigation: Collapsible navbar for mobile devices
+- Touch-Friendly Interface: Large buttons and intuitive gestures
+- Optimized Forms: Mobile-friendly form layouts and input types
+- Performance: Lazy-loaded routes and optimized bundle size
 
-## 🚀 Performance Features
+## Performance Features
 
-- **Lazy Loading**: Route-based code splitting
-- **OnPush Strategy**: Optimized change detection (when applicable)
-- **Local Storage**: Fast data persistence and retrieval
-- **Minimal Dependencies**: Lightweight, focused feature set
+- Lazy Loading: Route-based code splitting
+- OnPush Strategy: Optimized change detection (when applicable)
+- Local Storage: Fast data persistence and retrieval
+- Minimal Dependencies: Lightweight, focused feature set
 
-## 🔮 Future Enhancements
+## Troubleshooting
 
-- **User Authentication**: Login/logout functionality
-- **Account Categories**: Savings goals, investment accounts
-- **Recurring Transfers**: Scheduled automatic transfers
-- **Transaction Categories**: Expense categorization and budgeting
-- **Real Backend Integration**: REST API integration
-- **Advanced Reporting**: Charts, graphs, and financial insights
+### Common Issues
+
+1. **Port 4200 already in use**
+   ```bash
+   ng serve --port 4201
+   # Or kill existing process
+   lsof -ti:4200 | xargs kill -9
+   ```
+
+2. **Node modules issues**
+   ```bash
+   rm -rf node_modules package-lock.json
+   npm install
+   ```
+
+3. **Angular CLI version conflicts**
+   ```bash
+   npm uninstall -g @angular/cli
+   npm install -g @angular/cli@latest
+   ```
+
+4. **Memory issues during build**
+   ```bash
+   node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng build
+   ```
+
+## Future Enhancements
+
+- User Authentication: Login/logout functionality
+- Account Categories: Savings goals, investment accounts
+- Recurring Transfers: Scheduled automatic transfers
+- Transaction Categories: Expense categorization and budgeting
+- Real Backend Integration: REST API integration
+- Advanced Reporting: Charts, graphs, and financial insights
 
 ---
 
-## 👨‍💻 Development
+## Development
 
 This application demonstrates modern Angular development practices including:
-- **Standalone Components**: No NgModules required
-- **Reactive Forms**: Type-safe form handling
-- **RxJS Observables**: Reactive state management
-- **TypeScript**: Strong typing for better development experience
-- **Component Architecture**: Modular, reusable components
-- **Modern CSS**: Flexbox, Grid, and CSS Variables
+- Standalone Components: No NgModules required
+- Reactive Forms: Type-safe form handling
+- RxJS Observables: Reactive state management
+- TypeScript: Strong typing for better development experience
+- Component Architecture: Modular, reusable components
+- Modern CSS: Flexbox, Grid, and CSS Variables
 
 **Author**: Built with Angular 20 and modern web technologies  
 **License**: MIT  
